@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stella's Table | Local Restaurant</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: url('https://i.pinimg.com/736x/6e/e1/c6/6ee1c6614c44867a9c810a71c4b84227.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background: #ff914d;
+      color: #fff;
+      padding: 0.9rem 2rem;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffb067;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+      padding: 4rem 1.5rem;
+      text-align: center;
+      background-color: #f8f8f8;
+    }
+
+    .about h2 {
+      color: #ff914d;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+
+    /* MENU SECTION */
+    .menu {
+      padding: 4rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .menu h2 {
+      text-align: center;
+      color: #ff914d;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .menu-item {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .menu-item .info {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .menu-item h3 {
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-item p {
+      color: #777;
+      font-size: 0.95rem;
+    }
+
+    /* CONTACT SECTION */
+    .contact {
+      background-color: #ff914d;
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .contact h2 {
+      margin-bottom: 1rem;
+    }
+
+    .contact p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .contact a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    /* BOOKING SECTION */
+.booking {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.booking h2 {
+  color: #ff914d;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.booking p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.booking-form {
+  max-width: 600px;
+  margin: auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.booking-form input:focus,
+.booking-form textarea:focus {
+  border-color: #ff914d;
+  outline: none;
+  box-shadow: 0 0 6px rgba(255,145,77,0.3);
+}
+
+.booking-form button {
+  background: #ff914d;
+  color: #fff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking-form button:hover {
+  background: #ffb067;
+  transform: translateY(-2px);
+}
+
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Stella's Table</h1>
+      <p>Delicious meals made with love, right here in your neighborhood.</p>
+      <a href="#menu" class="btn">View Menu</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>At Stella's Table, we believe in fresh ingredients, authentic flavors, and warm hospitality. Whether you’re craving comfort food or something new, our chefs serve each plate with care and passion.</p>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="https://thecozycook.com/wp-content/uploads/2023/08/Buffalo-Chicken-Pizza-1.jpg" alt="Pizza">
+        <div class="info">
+          <h3>Margherita Pizza</h3>
+          <p>Classic cheese & tomato with a crispy crust.</p>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://www.recipetineats.com/tachyon/2022/08/Stack-of-cheeseburgers.jpg" alt="Burger">
+        <div class="info">
+          <h3>Beef Burger</h3>
+          <p>Juicy grilled patty with fresh toppings.</p>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://img.freepik.com/free-photo/top-view-tasty-salad-with-vegetables_23-2148515491.jpg?semt=ais_hybrid&w=740&q=80" alt="Salad">
+        <div class="info">
+          <h3>Garden Salad</h3>
+          <p>Healthy mix of greens and seasonal veggies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>123 Main Street, Pretoria</p>
+    <p>📞 <a href="tel:+1234567890">+27 1234568</a></p>
+    <p>📧 <a href="mailto:hello@tastebite.com">hello@Stellastable.com</a></p>
+    <a href="#book" class="btn" style="background:#fff;color:#ff914d;margin-top:1rem;">Book a Table</a>
+  </section>
+
+  <!-- BOOK A TABLE SECTION -->
+<section class="booking" id="book">
+  <h2>Book a Table</h2>
+  <p>Reserve your spot and enjoy a memorable dining experience with us.</p>
+
+  <form action="https://formspree.io/f/xpwyydbe" method="POST" class="booking-form">
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Your Full Name" required>
+    </div>
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+      <input type="tel" name="phone" placeholder="Your Phone Number" required>
+    </div>
+    <div class="form-group">
+      <input type="date" name="date" required>
+    </div>
+    <div class="form-group">
+      <input type="time" name="time" required>
+    </div>
+    <div class="form-group">
+      <input type="number" name="guests" placeholder="Number of Guests" min="1" required>
+    </div>
+    <div class="form-group">
+      <textarea name="message" rows="4" placeholder="Any special requests?"></textarea>
+    </div>
+    <button type="submit">Reserve Table</button>
+  </form>
+</section>
+
+
+  <footer>
+    <p>© 2025 Stella's Table Restaurant | Designed by Stella Modise !</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stella Modise| Front-End Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4f46e5, #9333ea);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+/* CONTACT FORM STYLING */
+.contact-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(79,70,229,0);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 8px rgba(79,70,229,0.3);
+  outline: none;
+}
+
+.contact-form button {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(79,70,229,0.3);
+}
+
+/* SUBTLE ANIMATIONS */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 2rem;
+      background: #fff;
+      color: #4f46e5;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #4f46e5;
+      color: #fff;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #4f46e5;
+    }
+
+    .about p {
+      text-align: center;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .project .info {
+      padding: 1rem;
+    }
+
+    .project h3 {
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .project p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .project a {
+      text-decoration: none;
+      color: #4f46e5;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #9333ea;
+    }
+
+    footer {
+      text-align: center;
+      background: #4f46e5;
+      color: #fff;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .btn { padding: 0.6rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hi, I'm Stella</h1>
+    <p>Front-End Developer | HTML & CSS Specialist</p>
+    <a href="#contact" class="btn">Hire Me</a>
+  </header>
+
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate  web developer who loves creating clean, responsive, and user-friendly websites using HTML and CSS. I’m currently building my freelancing career and would love to bring your ideas to life through elegant web design.
+    </p>
+  </section>
+
+  <section class="portfolio" id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="https://source.unsplash.com/800x600/?website,design" alt="Project 1">
+        <div class="info">
+          <h3>Personal Portfolio</h3>
+          <p>A responsive portfolio site built with HTML and CSS.</p>
+          <a href="#">Live Demo</a> | <a href="#">Source Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="https://source.unsplash.com/800x600/?restaurant,food" alt="Project 2">
+        <div class="info">
+          <h3>Restaurant Landing Page</h3>
+          <p>A clean landing page for a local restaurant.</p>
+          <a href="#">Live Demo</a> | <a href="#">Source Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="https://source.unsplash.com/800x600/?blog,website" alt="Project 3">
+        <div class="info">
+          <h3>Simple Blog Layout</h3>
+          <p>A modern blog homepage layout with cards.</p>
+          <a href="#">Live Demo</a> | <a href="#">Source Code</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <section class="contact" id="contact">
+  <h2>Contact Me</h2>
+  <p>Let's work together! Send me a message below:</p>
+
+  <form action="https://formspree.io/f/xeorrgkd" method="POST" class="contact-form">
+    <div class="form-group fade-in">
+      <input type="text" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group fade-in delay-1">
+      <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="form-group fade-in delay-2">
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    </div>
+    <button type="submit" class="fade-in delay-3">Send Message</button>
+  </form>
+
+  <div class="socials fade-in delay-4">
+    <a href="mailto:modisestella38@gmail.com">Email</a>
+    <a href="#">Upwork</a>
+    <a href="#">Fiverr</a>
+    <a href="https://www.linkedin.com/in/stellamodise/">LinkedIn</a>
+  </div>
+</section>
+
+
+
+  <footer>
+    <p>© 2025 Stella Modise , All Rights Reserved!</p>
+  </footer>
+</body>
+</html>
